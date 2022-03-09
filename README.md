@@ -50,7 +50,7 @@ No modules.
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | (Optional, Forces new resource) Creates a unique friendly name beginning with the specified prefix. Conflicts with `name` | `string` | `null` | no |
 | <a name="input_path"></a> [path](#input\_path) | (Optional) Path to the role | `string` | `"/"` | no |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | (Optional) ARN of the policy that is used to set the permissions boundary for the role. | `string` | `null` | no |
-| <a name="input_policy"></a> [policy](#input\_policy) | (Required) The inline policy document. This is a JSON formatted string. | `string` | n/a | yes |
+| <a name="input_policy"></a> [policy](#input\_policy) | (Required) The inline policy document. This is a JSON formatted string. | `string` | `""` | no |
 | <a name="input_policy_description"></a> [policy\_description](#input\_policy\_description) | (Optional, Forces new resource) Description of the IAM policy. | `string` | `null` | no |
 | <a name="input_policy_name"></a> [policy\_name](#input\_policy\_name) | (Optional, Forces new resource) The name of the policy. If omitted, Terraform will assign a random, unique name. | `string` | `null` | no |
 

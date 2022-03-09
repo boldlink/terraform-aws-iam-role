@@ -78,4 +78,5 @@ variable "policy_description" {
 variable "policy" {
   type        = string
   description = "(Required) The inline policy document. This is a JSON formatted string."
+  default     = ""
 }
