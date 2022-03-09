@@ -23,13 +23,22 @@ resource "aws_iam_role" "main" {
 }
 
 resource "aws_iam_policy" "main" {
+  count       = var.create_policy ? 1 : 0
   name        = var.policy_name
   path        = var.path
   description = var.policy_description
   policy      = var.policy
+
 }
 
 resource "aws_iam_role_policy_attachment" "main" {
+  count      = var.create_policy ? 1 : 0
   role       = aws_iam_role.main.name
-  policy_arn = aws_iam_policy.main.arn
+  policy_arn = join("", aws_iam_policy.main.*.arn)
+}
+
+resource "aws_iam_role_policy_attachment" "managed" {
+  count      = length(var.managed_policy_arns) > 0 ? length(var.managed_policy_arns) : 0
+  role       = aws_iam_role.main.name
+  policy_arn = element(aws_iam_policy.main.*.arn, count.index)
 }

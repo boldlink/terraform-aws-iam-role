@@ -34,12 +34,14 @@ No modules.
 | [aws_iam_policy.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.managed](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_assume_role_policy"></a> [assume\_role\_policy](#input\_assume\_role\_policy) | (Required) Policy that grants an entity permission to assume the role. | `string` | n/a | yes |
+| <a name="input_create_policy"></a> [create\_policy](#input\_create\_policy) | Choose whether you want to create IAM Policy resource | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | (Optional) Description of the role. | `string` | `null` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | The environment in which this resource is deployed | `string` | `null` | no |
 | <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | (Optional) Whether to force detaching any policies the role has before destroying it. Defaults to `false` | `bool` | `false` | no |
@@ -50,7 +52,7 @@ No modules.
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | (Optional, Forces new resource) Creates a unique friendly name beginning with the specified prefix. Conflicts with `name` | `string` | `null` | no |
 | <a name="input_path"></a> [path](#input\_path) | (Optional) Path to the role | `string` | `"/"` | no |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | (Optional) ARN of the policy that is used to set the permissions boundary for the role. | `string` | `null` | no |
-| <a name="input_policy"></a> [policy](#input\_policy) | (Required) The inline policy document. This is a JSON formatted string. | `string` | `""` | no |
+| <a name="input_policy"></a> [policy](#input\_policy) | (Required) The inline policy document. This is a JSON formatted string. | `string` | `null` | no |
 | <a name="input_policy_description"></a> [policy\_description](#input\_policy\_description) | (Optional, Forces new resource) Description of the IAM policy. | `string` | `null` | no |
 | <a name="input_policy_name"></a> [policy\_name](#input\_policy\_name) | (Optional, Forces new resource) The name of the policy. If omitted, Terraform will assign a random, unique name. | `string` | `null` | no |
 

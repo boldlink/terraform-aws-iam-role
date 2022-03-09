@@ -29,41 +29,41 @@ output "unique_id" {
 }
 
 output "aws_assigned_policy_id" {
-  value       = aws_iam_policy.main.id
+  value       = join("", aws_iam_policy.main.*.id)
   description = "The ARN assigned by AWS to this policy."
 }
 
 output "policy_arn" {
-  value       = aws_iam_policy.main.arn
+  value       = join("", aws_iam_policy.main.*.arn)
   description = "The ARN assigned by AWS to this policy."
 }
 
 output "policy_description" {
-  value       = aws_iam_policy.main.description
+  value       = [aws_iam_policy.main.*.description]
   description = "The description of the policy."
 }
 
 output "policy_name" {
-  value       = aws_iam_policy.main.name
+  value       = join("", aws_iam_policy.main.*.name)
   description = "The name of the policy."
 }
 
 output "policy_path" {
-  value       = aws_iam_policy.main.path
+  value       = join("", aws_iam_policy.main.*.path)
   description = "The path of the policy in IAM."
 }
 
 output "policy" {
-  value       = aws_iam_policy.main.policy
+  value       = join("", aws_iam_policy.main.*.policy)
   description = "The policy document."
 }
 
 output "policy_id" {
-  value       = aws_iam_policy.main.policy_id
+  value       = join("", aws_iam_policy.main.*.policy_id)
   description = "The policy's ID."
 }
 
 output "policy_tags_all" {
-  value       = aws_iam_policy.main.tags_all
+  value       = [aws_iam_policy.main.*.tags_all]
   description = "A map of tags assigned to the resource, including those inherited from the provider `default_tags`"
 }

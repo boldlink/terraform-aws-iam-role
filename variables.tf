@@ -78,5 +78,11 @@ variable "policy_description" {
 variable "policy" {
   type        = string
   description = "(Required) The inline policy document. This is a JSON formatted string."
-  default     = ""
+  default     = null
+}
+
+variable "create_policy" {
+  type        = bool
+  description = "Choose whether you want to create IAM Policy resource"
+  default     = false
 }
