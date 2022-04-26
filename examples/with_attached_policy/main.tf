@@ -21,13 +21,13 @@ data "aws_iam_policy_document" "ec2_policy" {
 }
 
 locals {
-  name        = "boldlink-role-${uuid()}"
+  name        = "boldlink-role"
   environment = "development"
   policy_name = "Account-Attributes-policy"
 }
 
 module "role_for_ec2" {
-  source                = "./../.."
+  source                = "boldlink/iam-role/aws"
   name                  = local.name
   create_policy         = true
   environment           = local.environment

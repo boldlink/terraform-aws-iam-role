@@ -21,12 +21,12 @@ data "aws_iam_policy_document" "inline_policy" {
 }
 
 locals {
-  name        = "boldlink-role-${uuid()}"
+  name        = "boldlink-role"
   environment = "development"
 }
 
 module "role_for_ec2" {
-  source                = "./../.."
+  source                = "boldlink/iam-role/aws"
   name                  = local.name
   environment           = local.environment
   assume_role_policy    = data.aws_iam_policy_document.ec2_assume_role_policy.json
