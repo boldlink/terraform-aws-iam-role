@@ -40,5 +40,9 @@ resource "aws_iam_role_policy_attachment" "main" {
 resource "aws_iam_role_policy_attachment" "managed" {
   count      = length(var.managed_policy_arns) > 0 ? length(var.managed_policy_arns) : 0
   role       = aws_iam_role.main.name
+<<<<<<< HEAD
   policy_arn = element(var.managed_policy_arns, count.index)
+=======
+  policy_arn = element(aws_iam_policy.main.*.arn, count.index)
+>>>>>>> main
 }
