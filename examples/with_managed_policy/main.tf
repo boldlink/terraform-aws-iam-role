@@ -13,7 +13,7 @@ data "aws_iam_policy_document" "ec2_assume_role_policy" {
   }
 }
 
-data "aws_iam_policy_document" "ec2_policy" {
+data "aws_iam_policy_document" "inline_policy" {
   statement {
     actions   = ["ec2:DescribeAccountAttributes"]
     resources = ["*"]
@@ -23,19 +23,33 @@ data "aws_iam_policy_document" "ec2_policy" {
 locals {
   name        = "boldlink-role"
   environment = "development"
-  policy_name = "Account-Attributes-policy"
 }
 
 module "role_for_ec2" {
   source                = "boldlink/iam-role/aws"
   name                  = local.name
-  create_policy         = true
   environment           = local.environment
   assume_role_policy    = data.aws_iam_policy_document.ec2_assume_role_policy.json
   description           = "EC2 role with variety of permissions"
+  managed_policy_arns   = ["arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"]
   force_detach_policies = true
-  policy_name           = local.policy_name
-  policy                = data.aws_iam_policy_document.ec2_policy.json
+  inline_policy = [{
+    name = "my_inline_policy"
+    policy = jsonencode({
+      Version = "2012-10-17"
+      Statement = [
+        {
+          Action   = ["ec2:Describe*"]
+          Effect   = "Allow"
+          Resource = "*"
+        },
+      ]
+    })
+    },
+    {
+      name   = "boldlink-policy-10525"
+      policy = data.aws_iam_policy_document.inline_policy.json
+  }]
 }
 
 output "outputs" {
