@@ -5,7 +5,7 @@ resource "aws_iam_role" "main" {
   force_detach_policies = var.force_detach_policies
   managed_policy_arns   = var.managed_policy_arns
   max_session_duration  = var.max_session_duration
-  name_prefix           = var.name_prefix
+  name_prefix           = var.name == null ? var.name_prefix : null
   path                  = var.path
   permissions_boundary  = var.permissions_boundary
   dynamic "inline_policy" {
@@ -16,14 +16,11 @@ resource "aws_iam_role" "main" {
       policy = lookup(inline_policy.value, "policy")
     }
   }
-  tags = {
-    name        = var.name
-    environment = var.environment
-  }
+  tags = var.tags
 }
 
 resource "aws_iam_policy" "main" {
-  count       = var.create_policy ? 1 : 0
+  count       = var.policy != null ? 1 : 0
   name        = var.policy_name
   path        = var.path
   description = var.policy_description
@@ -32,7 +29,7 @@ resource "aws_iam_policy" "main" {
 }
 
 resource "aws_iam_role_policy_attachment" "main" {
-  count      = var.create_policy ? 1 : 0
+  count      = var.policy != null ? 1 : 0
   role       = aws_iam_role.main.name
   policy_arn = join("", aws_iam_policy.main.*.arn)
 }

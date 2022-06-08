@@ -1,3 +1,4 @@
+# IAM Role
 variable "assume_role_policy" {
   type        = string
   description = "(Required) Policy that grants an entity permission to assume the role."
@@ -57,12 +58,13 @@ variable "inline_policy" {
   default     = []
 }
 
-variable "environment" {
-  type        = string
-  description = "The environment in which this resource is deployed"
-  default     = null
+variable "tags" {
+  description = "Key-value mapping of tags for the IAM role. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level."
+  type        = map(string)
+  default     = {}
 }
 
+# IAM Policy
 variable "policy_name" {
   type        = string
   description = "(Optional, Forces new resource) The name of the policy. If omitted, Terraform will assign a random, unique name."
@@ -79,10 +81,4 @@ variable "policy" {
   type        = string
   description = "(Required) The inline policy document. This is a JSON formatted string."
   default     = null
-}
-
-variable "create_policy" {
-  type        = bool
-  description = "Choose whether you want to create IAM Policy resource"
-  default     = false
 }

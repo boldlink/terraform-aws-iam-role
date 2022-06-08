@@ -1,39 +1,10 @@
-provider "aws" {
-  region = "eu-west-1"
-}
-
-data "aws_iam_policy_document" "ec2_assume_role_policy" {
-  statement {
-    actions = ["sts:AssumeRole"]
-
-    principals {
-      type        = "Service"
-      identifiers = ["ec2.amazonaws.com"]
-    }
-  }
-}
-
-data "aws_iam_policy_document" "inline_policy" {
-  statement {
-    actions   = ["ec2:DescribeAccountAttributes"]
-    resources = ["*"]
-  }
-}
-
-locals {
-  name        = "boldlink-role"
-  environment = "development"
-}
-
-module "role_for_ec2" {
-  source                = "boldlink/iam-role/aws"
-  name                  = local.name
-  environment           = local.environment
-  assume_role_policy    = data.aws_iam_policy_document.ec2_assume_role_policy.json
-  description           = "EC2 role with variety of permissions"
-  force_detach_policies = true
+module "inline_policy" {
+  source             = "./../../"
+  name               = "example-inline-policy-role"
+  assume_role_policy = data.aws_iam_policy_document.ec2_assume_role_policy.json
+  description        = "EC2 role with variety of permissions"
   inline_policy = [{
-    name = "my_inline_policy"
+    name = "example_inline_policy"
     policy = jsonencode({
       Version = "2012-10-17"
       Statement = [
@@ -49,10 +20,4 @@ module "role_for_ec2" {
       name   = "boldlink-policy-10525"
       policy = data.aws_iam_policy_document.inline_policy.json
   }]
-}
-
-output "outputs" {
-  value = [
-    module.role_for_ec2,
-  ]
 }

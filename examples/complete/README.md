@@ -23,7 +23,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_inline_policy"></a> [inline\_policy](#module\_inline\_policy) | ./../../ | n/a |
+| <a name="module_complete_managed_policy"></a> [complete\_managed\_policy](#module\_complete\_managed\_policy) | ./../../ | n/a |
 
 ## Resources
 
@@ -40,7 +40,7 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_outputs"></a> [outputs](#output\_outputs) | Example role with inline policy |
+| <a name="output_outputs"></a> [outputs](#output\_outputs) | Example complete role output |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Third party software
