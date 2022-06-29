@@ -11,7 +11,7 @@ Examples available [here](https://github.com/boldlink/terraform-aws-iam-role/tre
 
 ## Usage
 *NOTE*: These examples use the latest version of this module
-*main.tf* file
+
 ```hcl
 module "minimum" {
   source = "./../../"
