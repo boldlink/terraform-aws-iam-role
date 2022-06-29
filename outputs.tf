@@ -53,11 +53,6 @@ output "policy_path" {
   description = "The path of the policy in IAM."
 }
 
-output "policy" {
-  value       = join("", aws_iam_policy.main.*.policy)
-  description = "The policy document."
-}
-
 output "policy_id" {
   value       = join("", aws_iam_policy.main.*.policy_id)
   description = "The policy's ID."
