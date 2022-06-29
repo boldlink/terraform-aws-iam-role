@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.3] - 2022-06-29
 ### Description
 - Fix: Removed redundant code causing changes when doing a second terraform apply in customer-managed policies.
+- Modified complete example to also have a customer-managed policy
 
 ## [1.0.2] - 2022-06-08
 ### Description

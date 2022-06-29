@@ -3,7 +3,7 @@ resource "aws_iam_role" "main" {
   assume_role_policy    = var.assume_role_policy
   description           = var.description
   force_detach_policies = var.force_detach_policies
-  managed_policy_arns   = var.managed_policy_arns
+  managed_policy_arns   = compact(concat(var.managed_policy_arns, [try(aws_iam_policy.main[0].arn, "")]))
   max_session_duration  = var.max_session_duration
   name_prefix           = var.name == null ? var.name_prefix : null
   path                  = var.path
