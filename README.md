@@ -12,11 +12,30 @@ Examples available [here](https://github.com/boldlink/terraform-aws-iam-role/tre
 ## Usage
 *NOTE*: These examples use the latest version of this module
 
-```console
+```hcl
 module "minimum" {
   source = "./../../"
   name   = "example-minimum-role"
   assume_role_policy = local.policy
+}
+```
+
+*locals.tf* file
+```hcl
+locals {
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Sid    = ""
+        Principal = {
+          Service = "ec2.amazonaws.com"
+        }
+      },
+    ]
+  })
 }
 ```
 ## Documentation
@@ -36,7 +55,7 @@ module "minimum" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.17.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.20.1 |
 
 ## Modules
 
@@ -49,7 +68,6 @@ No modules.
 | [aws_iam_policy.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_iam_role_policy_attachment.managed](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 
 ## Inputs
 
@@ -104,7 +122,7 @@ This repository uses third party software:
   * Manually use via pre-commit
 
 ### Makefile
-The makefile contain in this repo is optimized for linux paths and the main purpose is to execute testing for now.
+The makefile contained in this repo is optimized for linux paths and the main purpose is to execute testing for now.
 * Create all tests:
 `$ make tests`
 * Clean all tests:

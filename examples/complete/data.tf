@@ -8,10 +8,3 @@ data "aws_iam_policy_document" "ec2_assume_role_policy" {
     }
   }
 }
-
-data "aws_iam_policy_document" "inline_policy" {
-  statement {
-    actions   = ["ec2:DescribeAccountAttributes"]
-    resources = ["*"]
-  }
-}
