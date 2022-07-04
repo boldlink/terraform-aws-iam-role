@@ -55,7 +55,7 @@ locals {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.20.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.21.0 |
 
 ## Modules
 
@@ -66,6 +66,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_iam_policy.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.permissions_boundary](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 
@@ -83,9 +84,14 @@ No modules.
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | (Optional, Forces new resource) Creates a unique friendly name beginning with the specified prefix. Conflicts with `name` | `string` | `null` | no |
 | <a name="input_path"></a> [path](#input\_path) | (Optional) Path to the role | `string` | `"/"` | no |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | (Optional) ARN of the policy that is used to set the permissions boundary for the role. | `string` | `null` | no |
+| <a name="input_permissions_boundary_path"></a> [permissions\_boundary\_path](#input\_permissions\_boundary\_path) | (Optional) Path in which to create the policy. | `string` | `"/"` | no |
+| <a name="input_permissions_boundary_policy"></a> [permissions\_boundary\_policy](#input\_permissions\_boundary\_policy) | (Required) The inline policy document. This is a JSON formatted string. | `string` | `null` | no |
+| <a name="input_permissions_boundary_policy_description"></a> [permissions\_boundary\_policy\_description](#input\_permissions\_boundary\_policy\_description) | (Optional, Forces new resource) Description of the IAM policy. | `string` | `null` | no |
+| <a name="input_permissions_boundary_policy_name"></a> [permissions\_boundary\_policy\_name](#input\_permissions\_boundary\_policy\_name) | (Optional, Forces new resource) The name of the permissions boundary policy. If omitted, Terraform will assign a random, unique name. | `string` | `null` | no |
 | <a name="input_policy"></a> [policy](#input\_policy) | (Required) The inline policy document. This is a JSON formatted string. | `string` | `null` | no |
 | <a name="input_policy_description"></a> [policy\_description](#input\_policy\_description) | (Optional, Forces new resource) Description of the IAM policy. | `string` | `null` | no |
 | <a name="input_policy_name"></a> [policy\_name](#input\_policy\_name) | (Optional, Forces new resource) The name of the policy. If omitted, Terraform will assign a random, unique name. | `string` | `null` | no |
+| <a name="input_policy_path"></a> [policy\_path](#input\_policy\_path) | (Optional) Path in which to create the policy. | `string` | `"/"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Key-value mapping of tags for the IAM role. If configured with a provider default\_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level. | `map(string)` | `{}` | no |
 
 ## Outputs
@@ -97,7 +103,12 @@ No modules.
 | <a name="output_create_date"></a> [create\_date](#output\_create\_date) | Creation date of the IAM role. |
 | <a name="output_id"></a> [id](#output\_id) | Name of the role. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the role. |
-| <a name="output_policy"></a> [policy](#output\_policy) | The policy document. |
+| <a name="output_permissions_boundary_policy_arn"></a> [permissions\_boundary\_policy\_arn](#output\_permissions\_boundary\_policy\_arn) | The ARN assigned by AWS to this policy. |
+| <a name="output_permissions_boundary_policy_description"></a> [permissions\_boundary\_policy\_description](#output\_permissions\_boundary\_policy\_description) | The description of the permissions boundary policy. |
+| <a name="output_permissions_boundary_policy_id"></a> [permissions\_boundary\_policy\_id](#output\_permissions\_boundary\_policy\_id) | The permissions boundary policy's ID. |
+| <a name="output_permissions_boundary_policy_name"></a> [permissions\_boundary\_policy\_name](#output\_permissions\_boundary\_policy\_name) | The name of the permissions boundary policy. |
+| <a name="output_permissions_boundary_policy_path"></a> [permissions\_boundary\_policy\_path](#output\_permissions\_boundary\_policy\_path) | The path of the permissions boundary policy in IAM. |
+| <a name="output_permissions_boundary_policy_tags_all"></a> [permissions\_boundary\_policy\_tags\_all](#output\_permissions\_boundary\_policy\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider `default_tags` |
 | <a name="output_policy_arn"></a> [policy\_arn](#output\_policy\_arn) | The ARN assigned by AWS to this policy. |
 | <a name="output_policy_description"></a> [policy\_description](#output\_policy\_description) | The description of the policy. |
 | <a name="output_policy_id"></a> [policy\_id](#output\_policy\_id) | The policy's ID. |

@@ -77,7 +77,38 @@ variable "policy_description" {
   default     = null
 }
 
+variable "policy_path" {
+  type        = string
+  description = " (Optional) Path in which to create the policy. "
+  default     = "/"
+}
+
 variable "policy" {
+  type        = string
+  description = "(Required) The inline policy document. This is a JSON formatted string."
+  default     = null
+}
+
+# Permissions Boundary Policy
+variable "permissions_boundary_policy_name" {
+  type        = string
+  description = "(Optional, Forces new resource) The name of the permissions boundary policy. If omitted, Terraform will assign a random, unique name."
+  default     = null
+}
+
+variable "permissions_boundary_policy_description" {
+  type        = string
+  description = "(Optional, Forces new resource) Description of the IAM policy."
+  default     = null
+}
+
+variable "permissions_boundary_path" {
+  type        = string
+  description = " (Optional) Path in which to create the policy. "
+  default     = "/"
+}
+
+variable "permissions_boundary_policy" {
   type        = string
   description = "(Required) The inline policy document. This is a JSON formatted string."
   default     = null
