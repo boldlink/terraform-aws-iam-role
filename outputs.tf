@@ -28,67 +28,32 @@ output "unique_id" {
   description = "Stable and unique string identifying the role."
 }
 
-output "aws_assigned_policy_id" {
-  value       = join("", aws_iam_policy.main.*.id)
-  description = "The ARN assigned by AWS to this policy."
-}
-
 output "policy_arn" {
-  value       = join("", aws_iam_policy.main.*.arn)
+  value       = [for policy in aws_iam_policy.main : policy.arn]
   description = "The ARN assigned by AWS to this policy."
 }
 
 output "policy_description" {
-  value       = [aws_iam_policy.main.*.description]
+  value       = [for policy in aws_iam_policy.main : policy.description]
   description = "The description of the policy."
 }
 
 output "policy_name" {
-  value       = join("", aws_iam_policy.main.*.name)
+  value       = [for policy in aws_iam_policy.main : policy.name]
   description = "The name of the policy."
 }
 
 output "policy_path" {
-  value       = join("", aws_iam_policy.main.*.path)
+  value       = [for policy in aws_iam_policy.main : policy.path]
   description = "The path of the policy in IAM."
 }
 
 output "policy_id" {
-  value       = join("", aws_iam_policy.main.*.policy_id)
+  value       = [for policy in aws_iam_policy.main : policy.policy_id]
   description = "The policy's ID."
 }
 
 output "policy_tags_all" {
-  value       = [aws_iam_policy.main.*.tags_all]
-  description = "A map of tags assigned to the resource, including those inherited from the provider `default_tags`"
-}
-
-output "permissions_boundary_policy_arn" {
-  value       = join("", aws_iam_policy.permissions_boundary.*.arn)
-  description = "The ARN assigned by AWS to this policy."
-}
-
-output "permissions_boundary_policy_description" {
-  value       = [aws_iam_policy.permissions_boundary.*.description]
-  description = "The description of the permissions boundary policy."
-}
-
-output "permissions_boundary_policy_name" {
-  value       = join("", aws_iam_policy.permissions_boundary.*.name)
-  description = "The name of the permissions boundary policy."
-}
-
-output "permissions_boundary_policy_path" {
-  value       = join("", aws_iam_policy.permissions_boundary.*.path)
-  description = "The path of the permissions boundary policy in IAM."
-}
-
-output "permissions_boundary_policy_id" {
-  value       = join("", aws_iam_policy.permissions_boundary.*.policy_id)
-  description = "The permissions boundary policy's ID."
-}
-
-output "permissions_boundary_policy_tags_all" {
-  value       = [aws_iam_policy.permissions_boundary.*.tags_all]
+  value       = [for policy in aws_iam_policy.main : policy.tags_all]
   description = "A map of tags assigned to the resource, including those inherited from the provider `default_tags`"
 }
