@@ -30,30 +30,30 @@ output "unique_id" {
 
 output "policy_arns" {
   value       = [for policy in aws_iam_policy.main : policy.arn]
-  description = "The ARN assigned by AWS to this policy."
+  description = "The ARN(s) assigned by AWS to this policy/policies."
 }
 
 output "policy_descriptions" {
   value       = [for policy in aws_iam_policy.main : policy.description]
-  description = "The description of the policy."
+  description = "The description(s) of the policy/ policies."
 }
 
 output "policy_names" {
   value       = [for policy in aws_iam_policy.main : policy.name]
-  description = "The name of the policy."
+  description = "The name(s) of the policy."
 }
 
 output "policy_paths" {
   value       = [for policy in aws_iam_policy.main : policy.path]
-  description = "The path of the policy in IAM."
+  description = "The path(s) of the policy/policies in IAM."
 }
 
 output "policy_ids" {
   value       = [for policy in aws_iam_policy.main : policy.policy_id]
-  description = "The policy's ID."
+  description = "The policy's ID(s)."
 }
 
 output "policy_tags_all" {
   value       = [for policy in aws_iam_policy.main : policy.tags_all]
-  description = "A map of tags assigned to the resource, including those inherited from the provider `default_tags`"
+  description = "A map of tags assigned to the resource(s), including those inherited from the provider `default_tags`"
 }
