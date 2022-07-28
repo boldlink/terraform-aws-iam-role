@@ -28,27 +28,27 @@ output "unique_id" {
   description = "Stable and unique string identifying the role."
 }
 
-output "policy_arn" {
+output "policy_arns" {
   value       = [for policy in aws_iam_policy.main : policy.arn]
   description = "The ARN assigned by AWS to this policy."
 }
 
-output "policy_description" {
+output "policy_descriptions" {
   value       = [for policy in aws_iam_policy.main : policy.description]
   description = "The description of the policy."
 }
 
-output "policy_name" {
+output "policy_names" {
   value       = [for policy in aws_iam_policy.main : policy.name]
   description = "The name of the policy."
 }
 
-output "policy_path" {
+output "policy_paths" {
   value       = [for policy in aws_iam_policy.main : policy.path]
   description = "The path of the policy in IAM."
 }
 
-output "policy_id" {
+output "policy_ids" {
   value       = [for policy in aws_iam_policy.main : policy.policy_id]
   description = "The policy's ID."
 }

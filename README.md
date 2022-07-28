@@ -94,11 +94,11 @@ No modules.
 | <a name="output_create_date"></a> [create\_date](#output\_create\_date) | Creation date of the IAM role. |
 | <a name="output_id"></a> [id](#output\_id) | Name of the role. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the role. |
-| <a name="output_policy_arn"></a> [policy\_arn](#output\_policy\_arn) | The ARN assigned by AWS to this policy. |
-| <a name="output_policy_description"></a> [policy\_description](#output\_policy\_description) | The description of the policy. |
-| <a name="output_policy_id"></a> [policy\_id](#output\_policy\_id) | The policy's ID. |
-| <a name="output_policy_name"></a> [policy\_name](#output\_policy\_name) | The name of the policy. |
-| <a name="output_policy_path"></a> [policy\_path](#output\_policy\_path) | The path of the policy in IAM. |
+| <a name="output_policy_arns"></a> [policy\_arns](#output\_policy\_arns) | The ARN assigned by AWS to this policy. |
+| <a name="output_policy_descriptions"></a> [policy\_descriptions](#output\_policy\_descriptions) | The description of the policy. |
+| <a name="output_policy_ids"></a> [policy\_ids](#output\_policy\_ids) | The policy's ID. |
+| <a name="output_policy_names"></a> [policy\_names](#output\_policy\_names) | The name of the policy. |
+| <a name="output_policy_paths"></a> [policy\_paths](#output\_policy\_paths) | The path of the policy in IAM. |
 | <a name="output_policy_tags_all"></a> [policy\_tags\_all](#output\_policy\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider `default_tags` |
 | <a name="output_tags_all"></a> [tags\_all](#output\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider `default_tags` |
 | <a name="output_unique_id"></a> [unique\_id](#output\_unique\_id) | Stable and unique string identifying the role. |

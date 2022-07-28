@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2022-07-25
 ### Description
-- Removed permissions boundary policy resource to use aim-policy module instead
+- Removed permissions boundary policy resource to use iam-policy module instead
 - Feature: role iam_policy refactored to create multiple policies
 
 ## [1.0.4] - 2022-07-04

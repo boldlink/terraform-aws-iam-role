@@ -8,6 +8,7 @@ locals {
     Version = "2012-10-17"
     Statement = [
       {
+        Sid      = "ExampleEC2DesribeAllPolicy"
         Action   = ["ec2:Describe*"]
         Effect   = "Allow"
         Resource = "*"
@@ -18,6 +19,7 @@ locals {
     Version = "2012-10-17"
     Statement = [
       {
+        Sid = "ExampleRolePermissionsBoundary"
         Action = [
           "ec2:DescribeInstances",
           "ec2:DescribeInstanceTypeOfferings",
