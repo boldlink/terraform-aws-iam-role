@@ -40,7 +40,7 @@ output "policy_descriptions" {
 
 output "policy_names" {
   value       = [for policy in aws_iam_policy.main : policy.name]
-  description = "The name(s) of the policy."
+  description = "The name(s) of the policy/policies."
 }
 
 output "policy_paths" {
