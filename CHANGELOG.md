@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [1.1.0] - 2022-07-25
+### Description
+- Removed permissions boundary policy resource to use iam-policy module instead
+- Feature: role iam_policy refactored to create multiple policies
+
 ## [1.0.4] - 2022-07-04
 ### Description
 - Feature: Option to create a permissions boundary policy when creating a role.
@@ -33,7 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Feature: IAM role Policy
 - Feature: IAM Role
 
-[Unreleased]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.0.4...HEAD
+[Unreleased]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.1.0...HEAD
+
+[1.1.0]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.1.0
 
 [1.0.4]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.0.4
 

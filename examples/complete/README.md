@@ -17,12 +17,13 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.21.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.23.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_boundary_policy"></a> [boundary\_policy](#module\_boundary\_policy) | boldlink/iam-policy/aws | 1.0.2 |
 | <a name="module_complete_managed_policy"></a> [complete\_managed\_policy](#module\_complete\_managed\_policy) | ./../../ | n/a |
 
 ## Resources

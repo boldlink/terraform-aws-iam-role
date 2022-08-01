@@ -3,6 +3,7 @@ locals {
     Version = "2012-10-17"
     Statement = [
       {
+        Sid    = "ExampleSTSAssumeRole"
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Sid    = ""
