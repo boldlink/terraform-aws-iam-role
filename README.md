@@ -62,7 +62,7 @@ locals {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.23.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.61.0 |
 
 ## Modules
 
@@ -101,12 +101,12 @@ No modules.
 | <a name="output_create_date"></a> [create\_date](#output\_create\_date) | Creation date of the IAM role. |
 | <a name="output_id"></a> [id](#output\_id) | Name of the role. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the role. |
-| <a name="output_policy_arns"></a> [policy\_arns](#output\_policy\_arns) | The ARN assigned by AWS to this policy. |
-| <a name="output_policy_descriptions"></a> [policy\_descriptions](#output\_policy\_descriptions) | The description of the policy. |
-| <a name="output_policy_ids"></a> [policy\_ids](#output\_policy\_ids) | The policy's ID. |
-| <a name="output_policy_names"></a> [policy\_names](#output\_policy\_names) | The name of the policy. |
-| <a name="output_policy_paths"></a> [policy\_paths](#output\_policy\_paths) | The path of the policy in IAM. |
-| <a name="output_policy_tags_all"></a> [policy\_tags\_all](#output\_policy\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider `default_tags` |
+| <a name="output_policy_arns"></a> [policy\_arns](#output\_policy\_arns) | The ARN(s) assigned by AWS to this policy/policies. |
+| <a name="output_policy_descriptions"></a> [policy\_descriptions](#output\_policy\_descriptions) | The description(s) of the policy/ policies. |
+| <a name="output_policy_ids"></a> [policy\_ids](#output\_policy\_ids) | The policy's ID(s). |
+| <a name="output_policy_names"></a> [policy\_names](#output\_policy\_names) | The name(s) of the policy/policies. |
+| <a name="output_policy_paths"></a> [policy\_paths](#output\_policy\_paths) | The path(s) of the policy/policies in IAM. |
+| <a name="output_policy_tags_all"></a> [policy\_tags\_all](#output\_policy\_tags\_all) | A map of tags assigned to the resource(s), including those inherited from the provider `default_tags` |
 | <a name="output_tags_all"></a> [tags\_all](#output\_tags\_all) | A map of tags assigned to the resource, including those inherited from the provider `default_tags` |
 | <a name="output_unique_id"></a> [unique\_id](#output\_unique\_id) | Stable and unique string identifying the role. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
