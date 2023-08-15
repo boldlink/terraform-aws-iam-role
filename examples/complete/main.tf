@@ -17,6 +17,7 @@ module "complete_managed_policy" {
 }
 
 module "boundary_policy" {
+  #checkov:skip=CKV_TF_1:Ensure Terraform module sources use a commit hash
   source      = "boldlink/iam-policy/aws"
   version     = "1.0.2"
   policy_name = "${local.name}-permissions-boundary"
