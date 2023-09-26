@@ -23,8 +23,8 @@ Examples available [here](https://github.com/boldlink/terraform-aws-iam-role/tre
 
 ```hcl
 module "minimum" {
-  source = "./../../"
-  name   = "example-minimum-role"
+  source             = "boldlink/iam-role/aws"
+  version            = "<insert_latest_version_here>"
   assume_role_policy = local.policy
 }
 ```
@@ -133,4 +133,4 @@ The makefile contained in this repo is optimized for linux paths and the main pu
 * Clean all tests:
 `$ make clean`
 
-#### BOLDLink-SIG 2022
+#### BOLDLink-SIG 2023
