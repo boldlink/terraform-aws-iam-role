@@ -26,7 +26,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.12.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.23.0 |
 
 ## Modules
 
@@ -43,7 +43,13 @@
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_boundary_policy_description"></a> [boundary\_policy\_description](#input\_boundary\_policy\_description) | (Optional, Forces new resource) Description of the IAM permissions boundary policy. | `string` | `"Example permission boundary"` | no |
+| <a name="input_description"></a> [description](#input\_description) | (Optional) Description of the role. | `string` | `"Example complete role with a variety of permissions"` | no |
+| <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | (Optional) Whether to force detaching any policies the role has before destroying it. Defaults to `false` | `bool` | `true` | no |
+| <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | (Optional) Set of exclusive IAM managed policy ARNs to attach to the IAM role. If this attribute is not configured, Terraform will ignore policy attachments to this resource. When configured, Terraform will align the role's managed policy attachments with this set by attaching or detaching managed policies. Configuring an empty set (i.e., `managed_policy_arns = [])` will cause Terraform to remove all managed policy attachments. | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"<br>]</pre> | no |
+| <a name="input_path"></a> [path](#input\_path) | (Optional) Path to the role | `string` | `"/examples/"` | no |
 
 ## Outputs
 
