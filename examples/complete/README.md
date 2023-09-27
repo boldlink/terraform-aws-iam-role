@@ -26,7 +26,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.17.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.23.0 |
 
 ## Modules
 
@@ -49,6 +49,7 @@
 | <a name="input_description"></a> [description](#input\_description) | (Optional) Description of the role. | `string` | `"Example complete role with a variety of permissions"` | no |
 | <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | (Optional) Whether to force detaching any policies the role has before destroying it. Defaults to `false` | `bool` | `true` | no |
 | <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | (Optional) Set of exclusive IAM managed policy ARNs to attach to the IAM role. If this attribute is not configured, Terraform will ignore policy attachments to this resource. When configured, Terraform will align the role's managed policy attachments with this set by attaching or detaching managed policies. Configuring an empty set (i.e., `managed_policy_arns = [])` will cause Terraform to remove all managed policy attachments. | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"<br>]</pre> | no |
+| <a name="input_max_session_duration"></a> [max\_session\_duration](#input\_max\_session\_duration) | (Optional) Maximum session duration **(in seconds)** that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours. Since the value is in seconds, please provide a number between 3600 (1 hr) and 43200 (12 hrs). | `string` | `7200` | no |
 | <a name="input_path"></a> [path](#input\_path) | (Optional) Path to the role | `string` | `"/examples/"` | no |
 
 ## Outputs

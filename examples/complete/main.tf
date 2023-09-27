@@ -6,6 +6,7 @@ module "complete_managed_policy" {
   description           = var.description
   managed_policy_arns   = var.managed_policy_arns
   force_detach_policies = var.force_detach_policies
+  max_session_duration  = var.max_session_duration
   path                  = var.path
   tags                  = local.tags
   permissions_boundary  = module.boundary_policy.policy_arn

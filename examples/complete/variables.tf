@@ -27,3 +27,9 @@ variable "boundary_policy_description" {
   description = "(Optional, Forces new resource) Description of the IAM permissions boundary policy."
   default     = "Example permission boundary"
 }
+
+variable "max_session_duration" {
+  type        = string
+  description = "(Optional) Maximum session duration **(in seconds)** that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours. Since the value is in seconds, please provide a number between 3600 (1 hr) and 43200 (12 hrs)."
+  default     = 7200
+}
