@@ -3,9 +3,11 @@ module "complete_managed_policy" {
   source                = "./../../"
   name                  = local.name
   assume_role_policy    = data.aws_iam_policy_document.ec2_assume_role_policy.json
-  description           = "Example complete role with a variety of permissions"
-  managed_policy_arns   = ["arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"]
-  force_detach_policies = true
+  description           = var.description
+  managed_policy_arns   = var.managed_policy_arns
+  force_detach_policies = var.force_detach_policies
+  max_session_duration  = var.max_session_duration
+  path                  = var.path
   tags                  = local.tags
   permissions_boundary  = module.boundary_policy.policy_arn
   policies = {
@@ -21,6 +23,6 @@ module "boundary_policy" {
   source      = "boldlink/iam-policy/aws"
   version     = "1.0.2"
   policy_name = "${local.name}-permissions-boundary"
-  description = "Example-permission-boundary"
+  description = var.boundary_policy_description
   policy      = local.permissions_boundary_policy
 }
