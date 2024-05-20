@@ -84,7 +84,7 @@ locals {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.18.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.50.0 |
 
 ## Modules
 
