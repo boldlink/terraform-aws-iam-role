@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 - fix: CKV_TF_1 Ensure Terraform module sources use a commit hash
 
+## [1.2.0] - 2024-05-20
+### Description
+- Make policy names unique using hash in the name.
+- Add create before destroy lifecycle to the role resource.
+
 ## [1.1.1] - 2022-09-26
 ### Description
 - Added missing variables in complete example
@@ -43,8 +48,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Feature: IAM role Policy
 - Feature: IAM Role
 
-[Unreleased]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.1.1...HEAD
+[Unreleased]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.2.1...HEAD
 
+[1.2.0]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.1.1
 [1.1.1]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.1.1
 [1.1.0]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.1.0
 [1.0.4]: https://github.com/boldlink/terraform-aws-iam-role/releases/tag/1.0.4

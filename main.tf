@@ -25,10 +25,13 @@ resource "aws_iam_role" "main" {
 
 resource "aws_iam_policy" "main" {
   for_each = var.policies
-  name     = try(each.key, null)
+  name     = "${try(each.key, null)}-${local.policy_hash[each.key]}"
   path     = try(each.value.path, "/")
   policy   = each.value.policy
   tags     = try(each.value.tags, {})
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "main" {
