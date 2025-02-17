@@ -13,9 +13,10 @@
 
 # AWS IAM Role Terraform module
 
+**Note :** has of version 2.0.0 inline policies are no longer supported since this is being deprecated by the terraform provider.
+
 ## Description
 This module creates an AWS IAM Role together with a policy  defining the permissions that can be attached to the role using a policy attachment resource.
-
 
 ## Why Use This Module Over Standard Resources
 When managing AWS Identity and Access Management (IAM) roles within your infrastructure as code (IAC) setup, you have several options, including manually defining IAM roles and policies or using Terraform's built-in AWS provider resources. However, the `boldlink/iam-role/aws` Terraform module offers distinct advantages over these standard approaches, making it a compelling choice for your IAM role management needs.

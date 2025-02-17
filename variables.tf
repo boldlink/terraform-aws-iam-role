@@ -16,12 +16,6 @@ variable "force_detach_policies" {
   default     = false
 }
 
-variable "managed_policy_arns" {
-  type        = list(string)
-  description = "(Optional) Set of exclusive IAM managed policy ARNs to attach to the IAM role. If this attribute is not configured, Terraform will ignore policy attachments to this resource. When configured, Terraform will align the role's managed policy attachments with this set by attaching or detaching managed policies. Configuring an empty set (i.e., `managed_policy_arns = [])` will cause Terraform to remove all managed policy attachments."
-  default     = []
-}
-
 variable "max_session_duration" {
   type        = string
   description = "(Optional) Maximum session duration **(in seconds)** that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours. Since the value is in seconds, please provide a number between 3600 (1 hr) and 43200 (12 hrs)."
@@ -52,22 +46,20 @@ variable "permissions_boundary" {
   default     = null
 }
 
-variable "inline_policy" {
-  description = "(Optional) Configuration block defining an exclusive set of IAM inline policies associated with the IAM role. Defined below. If no blocks are configured, Terraform will ignore any inline policies in this resource. Configuring one empty block (i.e., inline_policy {}) will cause Terraform to remove all inline policies."
-  type        = list(map(string))
-  default     = []
-}
-
 variable "tags" {
   description = "Key-value mapping of tags for the IAM role. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level."
   type        = map(string)
   default     = {}
 }
 
-# IAM Policy
-
 variable "policies" {
   type        = map(any)
   description = "A map of policies to be created."
   default     = {}
+}
+
+variable "managed_policy_arns" {
+  description = "List of managed policy ARNs to attach to the role"
+  type        = list(string)
+  default     = []
 }
