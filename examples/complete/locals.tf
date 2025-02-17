@@ -1,5 +1,5 @@
 locals {
-  name = "example-complete-role"
+  name = "terraform-aws-iam-role-complete"
   tags = {
     environment        = "examples"
     "user::CostCenter" = "terraform-registry"

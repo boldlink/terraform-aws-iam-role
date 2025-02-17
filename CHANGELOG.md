@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 - fix: CKV_TF_1 Ensure Terraform module sources use a commit hash
 
+## [2.0.0] - 2025-02-17
+### Description
+- Remove inline polices support (breaking change), inline policies have been deprecated, `var.inline_policy` removed.
+- feat: Change the logic for managed roles, Managed Roles attachement to the role are deprecated.
+- feat: Refactor the complete examples to use the new module.
+- feat: Remove the md5 hash from the policy name.
+
 ## [1.2.0] - 2024-05-20
 ### Description
 - Make policy names unique using hash in the name.
